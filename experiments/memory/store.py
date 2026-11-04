@@ -60,7 +60,8 @@ class Memory:
         ''')
         self.db.commit()
 
-    def add(self, kind, payload, concepts=(), occurred_at=None, source=None, parent_id=None):
+    def add(self, kind, payload, concepts=(), occurred_at=None, source=None, parent_id=None,
+            links=()):
         event_id = uuid.uuid4().hex
         with self.db:
             self.db.execute('INSERT INTO events VALUES (?,?,?,?,?,?,?)',
@@ -68,15 +69,20 @@ class Memory:
                              json.dumps(payload, ensure_ascii=False, sort_keys=True), source, parent_id))
             self.db.execute('INSERT INTO access_tier VALUES (?,?,?,?)',
                             (event_id, 'active', None, now()))
-            self.tag(event_id, concepts)
+            self._tag(event_id, concepts)
+            self.db.executemany('INSERT INTO event_links VALUES (?,?,?)',
+                                [(event_id, relation, target) for relation, target in links])
         return event_id
 
     def tag(self, event_id, concepts):
         # Index changes are not edits to the original event.
         with self.db:
-            for concept in concepts:
-                self.db.execute('INSERT OR IGNORE INTO concepts VALUES (?)', (concept,))
-                self.db.execute('INSERT OR IGNORE INTO event_concepts VALUES (?,?)', (event_id, concept))
+            self._tag(event_id, concepts)
+
+    def _tag(self, event_id, concepts):
+        for concept in concepts:
+            self.db.execute('INSERT OR IGNORE INTO concepts VALUES (?)', (concept,))
+            self.db.execute('INSERT OR IGNORE INTO event_concepts VALUES (?,?)', (event_id, concept))
 
     def link(self, source_id, relation, target_id):
         with self.db:
