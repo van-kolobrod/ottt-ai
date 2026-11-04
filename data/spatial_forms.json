@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "domain": "spatial_form",
+  "rules": {
+    "filled_rectangle": {
+      "required": {"fills_bbox": true},
+      "parent": "пространственная_форма",
+      "description": "All cells in the component bounding box are occupied by the component."
+    },
+    "rectangular_frame": {
+      "required": {"rectangular_frame": true},
+      "parent": "пространственная_форма",
+      "description": "The component occupies its bounding-box boundary and encloses at least one cell."
+    }
+  }
+}
