@@ -157,3 +157,16 @@ Primary: Langley, Zytkow, Bradshaw & Simon, *Three Facets of Scientific Discover
 - Key lesson for OTTT research, not an adoption decision: test whether a shared representational substrate can support all three and whether learned class structure can constrain hypotheses about transformations without silently assuming chemical conservation applies to social systems.
 - Limits: prepared symbolic/chemical data, human-provided operators/assumptions, no demonstrated general cross-domain transfer, no original runtime or independent replication here.
 - Future predecessors worth studying: STAHL (element/compound decomposition and historical phlogiston models), DENDRAL (knowledge-intensive constrained structural search), AM/Eurisko (concept/heuristic discovery), DreamCoder (library learning and program abstraction).
+
+
+## CYRANO / Ken Haase: closure, abstraction and research status (2026-11-04)
+
+Primary source: Kenneth Haase, *Discovery Systems: From AM to CYRANO*, MIT AI Lab Working Paper 293 (March 1987), https://dspace.mit.edu/bitstream/handle/1721.1/41178/AI_WP_293.pdf . This is explicitly a preliminary working paper, not a demonstrated mature general discovery engine.
+
+- Central thesis: **closure of concept formation**. Newly formed concepts must themselves be valid inputs to the same concept-formation mechanism. A fixed nonrecursive combinatorial vocabulary has limited reach; recursive concept formation expands the space rapidly, necessitating heuristic search.
+- Explicitly distinguish **closure** from **usefulness**: closure makes recursive discovery representationally possible but does not guarantee informative or valid concepts.
+- Detailed diagnosis of AM `CANONIZE`: it helped create a representation of numbers from list equivalences, but generated tokens rather than first-class equivalence classes accessible to the same discovery mechanism. Haase argues the implementation thereby made the heuristic effectively one-shot. This is his diagnosis, not an experimentally established unique cause of AM's termination.
+- CYRANO replaces earlier frame/RLL designs with `TYPICAL`, a compositional type/predicate language with subsumption lattice. Concepts are types or mappings; abstraction functions map between vocabularies. Example: list concatenation APPEND is transported via cardinality abstraction to addition PLUS. Formal reading: A(f(x,y)) = g(A(x), A(y)) **when the abstraction preserves the operation**, not in general.
+- Discovery loop also tries to generate positive/negative instances for candidate regularities. Paper says an implemented heuristic prunes some partition abstractions based on statistical spread. **Major open limit acknowledged by author:** no sufficiently general criterion for pruning abstraction spaces; no complete measure of vocabulary coherence. Do not claim CYRANO achieved sustained autonomous discovery or solved search explosion.
+- Research lesson for OTTT: study which operators preserve invariants across levels, record abstraction maps and their validity conditions, and ensure newly induced concepts remain first-class operands. This is research comparison, not an adoption decision.
+- Distinguish historical status: this is a 1987 experimental project; current ongoing development or comprehensive performance benchmarks not established by the source.
