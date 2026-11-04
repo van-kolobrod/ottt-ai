@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "domain": "geometry",
+  "rules": {
+    "квадрат": {
+      "required": {"closed": true, "sides": 4, "equal_sides": true, "right_angles": true},
+      "parent": "четырёхугольник"
+    },
+    "прямоугольник": {
+      "required": {"closed": true, "sides": 4, "right_angles": true},
+      "parent": "четырёхугольник"
+    }
+  }
+}
