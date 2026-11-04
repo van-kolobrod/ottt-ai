@@ -405,3 +405,16 @@ Representation discovery differs from parameter estimation and process-template 
 Proposed OTTT diagnosis: when prediction/action fails, distinguish observation noise, parameter error, wrong combination of known processes, missing known variable, and genuinely insufficient representational language. Maintain competing hypotheses rather than rigidly forcing this sequence. Evaluate a new concept by held-out prediction, improved planning/action, compression, transfer and representational complexity, with safeguards against overfitting. Illustrative pond: adding dissolved oxygen as a relevant variable is often transfer of existing knowledge rather than independent discovery of oxygen.
 
 Two distinct transitions: T_W: D0 -> D1 transforms world state; T_K: M0 -> M1 transforms the model/ontology. Operators such as decomposition, composition, abstraction, introducing properties/relations and changing system boundaries may be shared at an abstract level, but world actions and representational revisions require different validation. Goal G controls relevance and abstraction depth, subject to safety and causal dependencies. This is an architectural hypothesis for OTTT, not a demonstrated novel algorithm.
+
+
+## Целеориентированная онтологическая ориентация (2026-11-05)
+
+**Принцип.** Первичная ориентация в онтологии ситуации должна определяться возможной целью взаимодействия. Прежде чем предлагать решение, агент должен выяснить, *какую именно задачу следует решать*. Он не должен автоматически подменять неопределённую цель наиболее типичным сценарием.
+
+**Пример.** Сообщение «Мне грустно, мои романы не читают» не устанавливает, требуется ли эмоциональная поддержка, объяснение причин, поиск читателей или проверка самой предпосылки. Рекомендации по продвижению без определения цели — преждевременный выбор задачи. Вопрос «А кто ты?» может быть полезен для ориентации, но сведения о личности следует запрашивать лишь в той мере, в какой они важны для предполагаемой цели.
+
+**Рабочий цикл:** восприятие → гипотезы о целях → онтологическая ориентация относительно этих целей → оценка критических пробелов → при необходимости уточнение → выбор задачи → поиск и выполнение преобразования Д₀→Д₁ → проверка. Определение цели и онтологическая ориентация итеративны: сведения о ситуации уточняют цель, а гипотеза о цели определяет, какие сведения существенны.
+
+**Критерий уточнения:** спрашивать, если неопределённость цели или контекста существенно меняет выбор действия и ожидаемая ценность ответа превосходит стоимость уточнения. Иначе допустимо безопасное предварительное действие (например, признать переживание) без необоснованных предположений.
+
+**Разграничение:** задача пользователя, непосредственная коммуникативная потребность и задача, которую агент сам предположил, не тождественны. Агент не должен молча принимать третью за первую.
