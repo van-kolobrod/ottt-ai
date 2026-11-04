@@ -132,3 +132,16 @@ Source inspection: [ebc_backtrace.cpp](https://github.com/SoarGroup/Soar/blob/ma
 - Proposed architecture hypothesis: store a proof/dependency DAG for D0→D1, extract candidate rule by backward slicing, variablize with preserved equality/identity constraints, validate structurally, then test interventions and held-out transfer. No implementation or benchmark executed.
 
 OpenNARS benchmark remains queued due to Codex limit.
+
+
+## BACON scientific-discovery lineage — literature review (2026-11-04)
+
+Primary sources: [Langley 1977 BACON](https://ijcai.org/proceedings/1977/77); [Langley 1981 BACON.3](https://doi.org/10.1016/S0364-0213(81)80025-0); [Langley, Bradshaw & Simon 1981 BACON.5](https://ijcai.org/proceedings/1981/26); [Bradshaw, Langley & Simon 1983 Science](https://pubmed.ncbi.nlm.nih.gov/17776217/); [Langley et al. 1983 GLAUBER/BACON/DALTON](https://ijcai.org/proceedings/1983/114).
+
+- BACON employs a small set of data-driven heuristics: identify constancies/trends, generate derived quantities (ratios/products), recursively analyze derived quantities, and postulate theoretical terms or intrinsic properties. This is **search in a human-specified operation language**, not invention of arithmetic primitives.
+- Versions differ materially: 1977 early BACON used programmer-specified primitive attributes in an artificial world and acknowledged inability to express conditional laws; BACON.3 reports experiments, irrelevant-variable handling and rediscovery of Kepler, Ohm, ideal gas etc.; BACON.5 reports conservation/symmetry laws, but explicitly flags inability to handle noise and irrelevant variables and restricted law class. Do not merge version-specific capabilities.
+- Rediscovery of a known empirical equation on curated data is not evidence of general causal discovery or novel physical theory; no independent replication or original code execution performed in this review.
+- Of special relevance to OTTT: recursively construct *new descriptive quantities* and then apply the same invariance-search operator to them. Distinguish discovery of a new descriptor from discovery of a new operation, and mathematical fit from causal mechanism.
+- Related complementary systems described by authors: GLAUBER (qualitative classes/laws) and DALTON (structural models of reactions). These merit investigation because OTTT seeks relations and transformations, not only numerical laws.
+
+OpenNARS benchmark remains queued / NOT RUN; no Codex tasks executed.
