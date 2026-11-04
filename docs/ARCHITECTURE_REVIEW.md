@@ -389,3 +389,19 @@ Traveller: EURISKO-assisted fleet designs won 1981 and 1982 Trillion Credit Squa
 Limits and critique: strong dependence on hand-built domain representations and evaluation functions, poor portability of heuristic utility, search blow-up and low-quality concept proliferation, semantic significance of syntactic mutations, substantial human steering. Ritchie & Hanna (1984) questioned clarity and replicability of reported mechanisms; Lenat & Brown responded, emphasizing omitted heuristics and syntax/semantics alignment. Haase's CYRANO analysis stresses closure: generated concepts must be reusable as inputs to concept formation.
 
 OTTT design hypothesis: distinguish K (ontology, process knowledge), H (explicitly represented revisable heuristics), A0 (stable execution/validation mechanisms), and G (goal). Candidate operator I=(K,H,A0,G). Transformations may apply to world entities, knowledge representations, concepts, plans and heuristics, but shared primitives are a hypothesis requiring benchmarks. Self-modification must not be equated with self-improvement: candidate heuristics require isolated tests, provenance, utility evaluation across tasks, regression checks and rollback. Maintain goal-focused reasoning and safety constraints.
+
+
+## Representation change/discovery: inventing predicates, features and abstractions (2026-11-05)
+
+Background sources:
+- Muggleton (1991), Inductive Logic Programming, New Generation Computing 8, 295–318, https://doi.org/10.1007/BF03037089 .
+- Cropper & Muggleton (2016), Learning Higher-Order Logic Programs Through Abstraction and Invention, IJCAI 2016, https://www.ijcai.org/Proceedings/16/Papers/093.pdf .
+- Ellis et al. (2021), DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning, PLDI 2021, https://doi.org/10.1145/3453483.3454080 .
+- Gärdenfors (2000), Conceptual Spaces: The Geometry of Thought, MIT Press, https://mitpress.mit.edu/9780262572194/conceptual-spaces/ .
+- Michalski (1983), A Theory and Methodology of Inductive Learning, Artificial Intelligence 20(2), 111–161, https://doi.org/10.1016/0004-3702(83)90016-4 .
+
+Representation discovery differs from parameter estimation and process-template selection: the agent introduces new predicates, features, concepts, abstractions, or boundaries that change what it can express. Predicate invention in ILP creates reusable intermediate relations; constructive induction combines existing attributes into useful new ones (e.g. mass/volume -> density), requiring dimensional and empirical checks. DreamCoder learns reusable program abstractions, not necessarily ontic entities; conceptual spaces provide a geometric view of graded concepts but not a complete automatic discovery algorithm. Do not mistake new labels for discovered mechanisms.
+
+Proposed OTTT diagnosis: when prediction/action fails, distinguish observation noise, parameter error, wrong combination of known processes, missing known variable, and genuinely insufficient representational language. Maintain competing hypotheses rather than rigidly forcing this sequence. Evaluate a new concept by held-out prediction, improved planning/action, compression, transfer and representational complexity, with safeguards against overfitting. Illustrative pond: adding dissolved oxygen as a relevant variable is often transfer of existing knowledge rather than independent discovery of oxygen.
+
+Two distinct transitions: T_W: D0 -> D1 transforms world state; T_K: M0 -> M1 transforms the model/ontology. Operators such as decomposition, composition, abstraction, introducing properties/relations and changing system boundaries may be shared at an abstract level, but world actions and representational revisions require different validation. Goal G controls relevance and abstraction depth, subject to safety and causal dependencies. This is an architectural hypothesis for OTTT, not a demonstrated novel algorithm.
