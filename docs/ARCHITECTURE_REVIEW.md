@@ -92,3 +92,17 @@ Next controlled experiment: construct paired environments with true action causa
 **Interpretation:** Hyperon offers reusable mechanisms for typed symbolic structures, structural matching and rewrite execution, but inspected code does not establish automatic induction of new cross-domain operators. A generic `compose` operator would still need domain-specific constraints (chemical bonds versus human social ties versus grammar). Distinguish structural analogy from valid transfer of causal mechanisms. No code changes or integration proposed yet.
 
 **Next inspection:** MeTTa rewriting semantics and atom type system, representation of structural relations and their constraints, mechanisms (if any) for learning new rules, scalability, license and maintenance. Then compare with Soar and NARS at the level of implemented cognition loops.
+
+
+## Hyperon rule discovery versus rule execution — 2026-11-04
+
+**Evidence inspected:** [docs/metta.md](https://github.com/trueagi-io/hyperon-experimental/blob/main/docs/metta.md), [docs/minimal-metta.md](https://github.com/trueagi-io/hyperon-experimental/blob/main/docs/minimal-metta.md), [lib/src/metta/interpreter.rs](https://github.com/trueagi-io/hyperon-experimental/blob/main/lib/src/metta/interpreter.rs), [python/hyperon/base.py](https://github.com/trueagi-io/hyperon-experimental/blob/main/python/hyperon/base.py), [README.md](https://github.com/trueagi-io/hyperon-experimental/blob/main/README.md).
+
+- MeTTa represents rewrite/function definitions as `(= <call-pattern> <body>)`, supports variable matching and nondeterministic alternative reductions. The `:` and `->` forms specify atom/function types. Grounded operations can delegate to external implementations.
+- The minimal interpreter specification explicitly states it is not final. It describes an interpretation plan containing alternative atom/bindings pairs, and rewrite lookup in atomspace.
+- Python bindings exist and README documents `python3 -m pip install hyperon`; installation and runtime were NOT tested here.
+- **Critical distinction:** a rewrite engine can execute a newly inserted rule, but this does not by itself provide a rule-induction objective, hypothesis search, experiment design, evidence calibration or out-of-domain transfer. No general autonomous rule-induction algorithm was established from inspected files. Absence of a code-search hit for `learning` or `induction` is not evidence of absence across the entire ecosystem.
+- For OTTT, an external learner could propose candidate MeTTa rules from observations, test them on held-out examples, and add only verified rules with provenance and confidence to a separate space. The learner, not the interpreter, would supply the discovery mechanism. This is an architectural hypothesis, NOT implemented.
+- Proposed evaluation when Codex is available: compare explicit rewrite rules, simple grammar enumeration plus held-out testing, and relation-aware candidate generation on identical tasks. No experiment run.
+
+**Status:** OpenNARS causal benchmark remains QUEUED / NOT RUN due to Codex quota. Continue source analysis of Hyperon learning-related components and compare Soar next.
