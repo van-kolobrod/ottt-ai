@@ -34,3 +34,20 @@ Compare against simple fixed-rule, search/solver, and small learned baselines un
 ## Deliverables (pending)
 
 A per-project evidence table with source file references, licenses, mechanisms, technical feasibility, overlap and recommendation; a shortlist of minimal integration spikes; a clear list of unresolved original research questions. Update this document with dated findings after source inspection. Do not treat this plan as completed findings.
+
+
+## Preliminary source inspection — 2026-11-04
+
+Scope: initial examination, not a benchmark or full audit.
+
+### OpenNARS for Applications
+
+Directly inspected [src/Memory.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Memory.c): implemented priority queues for concepts and cycling belief/goal events; term-keyed concept hash table; temporal occurrence index; bounded storage arrays; operation registry. The source header identifies MIT licensing; repository-wide license and dependency obligations remain to be verified. Documentation describes priority selection, usefulness-based eviction, semantic and sensorimotor inference, which still require code-path and test verification. Potential reuse: working-memory scheduling and indexing; do not confuse bounded active concepts with append-only episodic provenance.
+
+### Hyperon Experimental / MeTTa
+
+Directly inspected [lib/src/metta/interpreter.rs](https://github.com/trueagi-io/hyperon-experimental/blob/main/lib/src/metta/interpreter.rs): Rust implementation has an explicit evaluation stack, variable bindings and shared state for alternative reductions. This provides source-level evidence of nondeterministic execution machinery. Hyperon documentation describes AtomSpace as a typed metagraph and MeTTa as structural transformations; these claims require further source/test review. Potential reuse: unification, typed symbolic representation and structural transformations in an isolated prototype. Licensing and Windows installation burden not yet verified.
+
+### Provisional conclusion
+
+ONA already implements concrete concept/event scheduling; MeTTa already has machinery for alternative symbolic matches. Neither establishes autonomous discovery of concepts or general intelligence. Next: inspect ONA inference/revision/evidence code and tests; Hyperon matcher/Space API/tests; check licenses, maintenance and Python bindings; compare runnable examples with ОТТТ. No integration decision yet.
