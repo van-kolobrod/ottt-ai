@@ -106,3 +106,16 @@ Next controlled experiment: construct paired environments with true action causa
 - Proposed evaluation when Codex is available: compare explicit rewrite rules, simple grammar enumeration plus held-out testing, and relation-aware candidate generation on identical tasks. No experiment run.
 
 **Status:** OpenNARS causal benchmark remains QUEUED / NOT RUN due to Codex quota. Continue source analysis of Hyperon learning-related components and compare Soar next.
+
+
+## Soar explanation-based chunking and RL — source inspection (2026-11-04)
+
+Sources: [ebc.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc.cpp), [ebc_build.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc_build.cpp), [ebc_settings.h](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc_settings.h), [reinforcement_learning.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/reinforcement_learning/reinforcement_learning.cpp).
+
+- Soar has a concrete Explanation_Based_Chunker, rule generation and settings for controlling learning. It excludes top-level instantiations from EBC learning and can restrict learning by goal/problem-space settings. Its build code gathers result preferences and tracks/unifies identity sets, providing a mechanism for explanation-based rule compilation/generalization.
+- Soar also has a separate reinforcement-learning subsystem with configurable SARSA, Q-learning and GQ-lambda policies; source defaults include learning off, discount rate 0.9, learning rate 0.3. This is distinct from EBC chunking and must not be conflated with it.
+- **Important limit:** EBC can compile/generalize consequences of an existing reasoning trace; it is not evidence that Soar autonomously invents novel ontological primitives or discovers arbitrary physical causal laws from raw data. The original task representation, available productions and reasoning path matter.
+- Relevance to OTTT: consider a two-stage process (i) solve D0→D1 with a transparent trace and (ii) distill the necessary conditions and transformations into a reusable rule with provenance, validity domain and negative tests. This is a candidate architecture, not a code integration decision.
+- Follow-up research: inspect the exact backtrace, variablization, chunk-validation and failure/repair paths; test whether a chunk genuinely transfers across structurally isomorphic domains and how invalid generalization is detected. No Soar executable experiment has been run.
+
+OpenNARS causal benchmark remains queued, not executed.
