@@ -368,3 +368,24 @@ IPM constructs explanatory quantitative models of dynamical systems by selecting
 Distinguish three kinds of model learning: (1) fitting parameters of known processes, (2) selecting/restructuring combinations of known process templates, (3) inventing genuinely new process primitives or laws. IPM mainly demonstrates (1) and (2), not unrestricted (3). Observational fit is not proof of causality. Held-out prediction, interventions, physical constraints, uncertainty and model comparison are needed.
 
 OTTT proposal: goal-conditioned composition and inductive revision of models over recursively nested entities. The operator selects a task-relevant abstraction, predicts outcomes, observes discrepancies, then updates parameter estimates, process structure, or—more speculatively—the representational language itself. Knowledge-seeking/diagnostic actions can be chosen to discriminate hypotheses. Suggested operator signature I:(D_t,M_t,G)->(a_t,M_{t+1}), where D is observed world state, M is current ontology/process knowledge, G is goal; improvements must be validated rather than assumed.
+
+
+## AM and EURISKO: concept discovery, heuristics as editable knowledge (2026-11-05)
+
+Primary sources:
+- Douglas B. Lenat (1982), The Nature of Heuristics, Artificial Intelligence 19(2), 189–249. https://doi.org/10.1016/0004-3702(82)90036-4
+- Lenat (1983), Theory Formation by Heuristic Search: The Nature of Heuristics II, Artificial Intelligence 21, 31–59. https://doi.org/10.1016/S0004-3702(83)80004-6
+- Lenat (1983), EURISKO: A Program That Learns New Heuristics and Domain Concepts, Artificial Intelligence 21, 61–98. https://doi.org/10.1016/S0004-3702(83)80005-8
+- Ritchie & Hanna (1984), AM: A Case Study in AI Methodology, Artificial Intelligence 23, 249–268. https://doi.org/10.1016/0004-3702(84)90015-8
+- Lenat & John Seely Brown (1984), Why AM and EURISKO Appear to Work, Artificial Intelligence 23, 269–294. https://doi.org/10.1016/0004-3702(84)90016-X
+- Haase (1987), Discovery Systems: From AM to CYRANO, MIT AI WP-293, http://hdl.handle.net/1721.1/41178
+
+AM (begun 1975) explored mathematical concept formation by heuristic-guided changes to explicitly represented Lisp predicates, prioritizing tasks and evaluating generated definitions. Example in Lenat & Brown: generalizing LIST-EQUAL by dropping one recursive comparison yields a predicate equivalent to SAME-LENGTH (on suitable list inputs). This is transformation of a formal definition, not autonomous invention of a new physical mechanism.
+
+EURISKO (early 1980s) extends this paradigm by representing heuristic rules themselves as manipulable objects, allowing specialized/generalized/analogical variants of heuristics and task concepts. Metaheuristic search changes part of the operator's search policy, not the entire fixed interpreter. Heuristics were characterized by Lenat as compiled hindsight, relying on regularity of domains.
+
+Traveller: EURISKO-assisted fleet designs won 1981 and 1982 Trillion Credit Squadron tournaments, exploiting rule interactions and sometimes near-extreme designs. Crucial qualification from Lenat's own 1982 account: human supervision included inspecting runs, culling invalid heuristics and promoting promising ones; his illustrative 60/40 Lenat/EURISKO credit split is not an objective performance measure. Game-rule exploits do not prove universal world understanding.
+
+Limits and critique: strong dependence on hand-built domain representations and evaluation functions, poor portability of heuristic utility, search blow-up and low-quality concept proliferation, semantic significance of syntactic mutations, substantial human steering. Ritchie & Hanna (1984) questioned clarity and replicability of reported mechanisms; Lenat & Brown responded, emphasizing omitted heuristics and syntax/semantics alignment. Haase's CYRANO analysis stresses closure: generated concepts must be reusable as inputs to concept formation.
+
+OTTT design hypothesis: distinguish K (ontology, process knowledge), H (explicitly represented revisable heuristics), A0 (stable execution/validation mechanisms), and G (goal). Candidate operator I=(K,H,A0,G). Transformations may apply to world entities, knowledge representations, concepts, plans and heuristics, but shared primitives are a hypothesis requiring benchmarks. Self-modification must not be equated with self-improvement: candidate heuristics require isolated tests, provenance, utility evaluation across tasks, regression checks and rollback. Maintain goal-focused reasoning and safety constraints.
