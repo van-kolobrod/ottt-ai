@@ -119,3 +119,16 @@ Sources: [ebc.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel
 - Follow-up research: inspect the exact backtrace, variablization, chunk-validation and failure/repair paths; test whether a chunk genuinely transfers across structurally isomorphic domains and how invalid generalization is detected. No Soar executable experiment has been run.
 
 OpenNARS causal benchmark remains queued, not executed.
+
+
+## Soar EBC: how relevant conditions are selected (2026-11-04)
+
+Source inspection: [ebc_backtrace.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc_backtrace.cpp), [ebc_variablize.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc_variablize.cpp), [ebc_repair.cpp](https://github.com/SoarGroup/Soar/blob/master/Core/SoarKernel/src/explanation_based_chunking/ebc_repair.cpp).
+
+- Backtracing explicitly tracks `grounds`, `locals` and `negateds`, and marks instantiations to avoid traversing them twice. Relevance is computed from dependencies in a reasoning trace, not a statistical test of physical causation.
+- Variablization handles symbol identities and replaces eligible literal symbols with shared variables; not all symbols can or should be generalized.
+- Repair path includes `reorder_and_validate_chunk`, `reorder_and_validate_lhs_and_rhs`, and an attempted repair of unconnected conditions/RHS ordering. This is **structural/operational validation**, not evidence of empirical validation against unseen worlds.
+- Key distinction for OTTT: *derivational relevance* (used in a proof), *causal relevance* (changes outcome under intervention), and *transfer validity* (holds in new contexts) are three different predicates. A reusable rule needs provenance of derivation plus independent outcome checks and explicit scope. EBC addresses mainly the first and some syntactic/generalization safety.
+- Proposed architecture hypothesis: store a proof/dependency DAG for D0→D1, extract candidate rule by backward slicing, variablize with preserved equality/identity constraints, validate structurally, then test interventions and held-out transfer. No implementation or benchmark executed.
+
+OpenNARS benchmark remains queued due to Codex limit.
