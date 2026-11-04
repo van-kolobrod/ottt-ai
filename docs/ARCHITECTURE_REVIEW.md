@@ -51,3 +51,16 @@ Directly inspected [lib/src/metta/interpreter.rs](https://github.com/trueagi-io/
 ### Provisional conclusion
 
 ONA already implements concrete concept/event scheduling; MeTTa already has machinery for alternative symbolic matches. Neither establishes autonomous discovery of concepts or general intelligence. Next: inspect ONA inference/revision/evidence code and tests; Hyperon matcher/Space API/tests; check licenses, maintenance and Python bindings; compare runnable examples with ОТТТ. No integration decision yet.
+
+
+## OpenNARS decision cycle — source trace (2026-11-04)
+
+Inspected code in [src/Cycle.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Cycle.c), [src/Decision.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Decision.c), and [src/Memory.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Memory.c).
+
+- Cycle_Perform (~line 1104): selects belief/goal events from priority queues, processes belief sequences and goal propagation, performs inference, then applies relative forgetting. This is a concrete bounded-resource cognition loop.
+- Cycle_ProcessSensorimotorEvent (~line 84): conceptualizes incoming events, finds related concepts, unifies terms and activates sensorimotor processing.
+- Decision_Suggest (~line 814): evaluates Decision_BestCandidate and may instead select Decision_MotorBabbling. Motor babbling samples a registered operation; it is exploration among available actions, not demonstrated invention of a new primitive operation.
+- Memory_Conceptualize (~line 109): retrieves a concept by term or inserts it in a bounded priority queue, evicting an existing concept if necessary; updates hash and inverted-atom indices. This active memory differs from ОТТТ's append-only event archive.
+- Decision_Execute and Decision_Anticipate exist, but causal learning, prediction error, evidential revision and operation invention require deeper trace and runnable tests before claims of demonstrated behavior.
+
+**Architectural implication:** compare NARS's priority-driven active conceptual memory and exploration/exploitation policy with ОТТТ's event store and hand-coded attention. Do not conflate creation of a concept record with discovery of a genuinely new semantic concept. No code integration authorized by this finding.
