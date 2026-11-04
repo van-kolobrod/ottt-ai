@@ -145,3 +145,15 @@ Primary sources: [Langley 1977 BACON](https://ijcai.org/proceedings/1977/77); [L
 - Related complementary systems described by authors: GLAUBER (qualitative classes/laws) and DALTON (structural models of reactions). These merit investigation because OTTT seeks relations and transformations, not only numerical laws.
 
 OpenNARS benchmark remains queued / NOT RUN; no Codex tasks executed.
+
+
+## GLAUBER and DALTON: qualitative concepts and latent structural models (2026-11-04)
+
+Primary: Langley, Zytkow, Bradshaw & Simon, *Three Facets of Scientific Discovery*, IJCAI 1983, https://ijcai.org/proceedings/1983/114 ; further GLAUBER: Langley et al., *Discovering qualitative empirical laws* (1985), https://escholarship.org/uc/item/1rc2v2sm ; DALTON later comparison: https://cdn.aaai.org/AAAI/1993/AAAI93-071.pdf .
+
+- GLAUBER starts from explicitly encoded qualitative predicate/attribute-value facts, identifies shared values/patterns, creates classes, merges classes with overlapping membership and recursively abstracts patterns over newly formed classes. Authors report rediscovery of acid/alkali/salt concepts and reaction laws. Crucially, inputs and relation vocabulary are supplied; this is not autonomous sensory concept grounding.
+- DALTON heuristically searches latent molecule/particle counts and structural models that explain observed reactions, using assumptions such as conservation and simplicity, with backtracking and revision on additional reactions. One observation may underdetermine the true structure; the 1983 paper explicitly illustrates a model consistent with water reaction data that is revised on ammonia evidence.
+- Distinguish **concept induction** (GLAUBER), **numeric law induction** (BACON), **latent structural explanation** (DALTON). These are distinct inference problems. Authors explicitly stated that their computational integration was not yet implemented in 1983, though proposed bidirectional constraints between them.
+- Key lesson for OTTT research, not an adoption decision: test whether a shared representational substrate can support all three and whether learned class structure can constrain hypotheses about transformations without silently assuming chemical conservation applies to social systems.
+- Limits: prepared symbolic/chemical data, human-provided operators/assumptions, no demonstrated general cross-domain transfer, no original runtime or independent replication here.
+- Future predecessors worth studying: STAHL (element/compound decomposition and historical phlogiston models), DENDRAL (knowledge-intensive constrained structural search), AM/Eurisko (concept/heuristic discovery), DreamCoder (library learning and program abstraction).
