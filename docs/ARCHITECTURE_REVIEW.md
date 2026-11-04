@@ -76,3 +76,19 @@ Sources inspected: [src/Cycle.c](https://github.com/opennars/OpenNARS-for-Applic
 - The system therefore has code for learning temporal action-outcome regularities and revising quantitative beliefs, but **temporal correlation is not proof of causal identification**. No evidence yet that it invents primitive operations or generalizes causal rules to unseen ontological domains.
 
 Next controlled experiment: construct paired environments with true action causation versus spurious temporal correlation, independent held-out episodes, negative outcomes and distribution shift. Measure chosen actions, predictive calibration, false causal rules, memory pressure and forgetting. Compare to a simple frequency-table learner and to ОТТТ's existing approach under the same data budget.
+
+
+## Queue update and Hyperon source inspection — 2026-11-04
+
+**Execution status:** OpenNARS causal benchmark protocol in `docs/OPENNARS_CAUSAL_BENCHMARK.md` is QUEUED / NOT RUN. Codex quota unavailable; do not begin implementation or imply measurements exist. Resume when resources permit. Continue static prior-art analysis meanwhile.
+
+### Hyperon evidence (source-level)
+
+- [hyperon-atom/src/matcher.rs](https://github.com/trueagi-io/hyperon-experimental/blob/main/hyperon-atom/src/matcher.rs): Rust bindings, binding sets, variable resolution and matching infrastructure; structural unification is an implemented mechanism.
+- [hyperon-space/src/lib.rs](https://github.com/trueagi-io/hyperon-experimental/blob/main/hyperon-space/src/lib.rs): Space abstraction for atom storage and querying; modification events Add/Remove/Replace and observers. This is mutable knowledge storage, not by itself an append-only evidence log.
+- [docs/minimal-metta.md](https://github.com/trueagi-io/hyperon-experimental/blob/main/docs/minimal-metta.md): interpreter state includes atomspace and variable bindings; nondeterministic interpretation maintains multiple branches; reduction searches rewrite equations in atomspace and supports grounded foreign functions. Specification explicitly states it is not final.
+- [python/hyperon/base.py](https://github.com/trueagi-io/hyperon-experimental/blob/main/python/hyperon/base.py): Python AbstractSpace and GroundingSpace wrappers expose query/add/remove/replace. Python interface exists in source; installation and platform compatibility not tested.
+
+**Interpretation:** Hyperon offers reusable mechanisms for typed symbolic structures, structural matching and rewrite execution, but inspected code does not establish automatic induction of new cross-domain operators. A generic `compose` operator would still need domain-specific constraints (chemical bonds versus human social ties versus grammar). Distinguish structural analogy from valid transfer of causal mechanisms. No code changes or integration proposed yet.
+
+**Next inspection:** MeTTa rewriting semantics and atom type system, representation of structural relations and their constraints, mechanisms (if any) for learning new rules, scalability, license and maintenance. Then compare with Soar and NARS at the level of implemented cognition loops.
