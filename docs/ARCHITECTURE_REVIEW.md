@@ -64,3 +64,15 @@ Inspected code in [src/Cycle.c](https://github.com/opennars/OpenNARS-for-Applica
 - Decision_Execute and Decision_Anticipate exist, but causal learning, prediction error, evidential revision and operation invention require deeper trace and runnable tests before claims of demonstrated behavior.
 
 **Architectural implication:** compare NARS's priority-driven active conceptual memory and exploration/exploitation policy with ОТТТ's event store and hand-coded attention. Do not conflate creation of a concept record with discovery of a genuinely new semantic concept. No code integration authorized by this finding.
+
+
+## OpenNARS learning from action outcomes — code trace (2026-11-04)
+
+Sources inspected: [src/Cycle.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Cycle.c) (Cycle_ProcessBeliefEvents, around line 676); [src/Decision.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Decision.c) (Decision_Anticipate, around line 556); [src/Truth.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Truth.c) (Truth_Revision, around line 46); [src/Memory.c](https://github.com/opennars/OpenNARS-for-Applications/blob/master/src/Memory.c) (belief revision path, around line 377).
+
+- Cycle_ProcessBeliefEvents examines time-ordered precondition, registered operation and postcondition events and calls Cycle_ReinforceLink to derive temporal implication candidates. Code applies temporal-distance and evidence-stamp overlap checks.
+- Decision_Anticipate traverses stored implications, filtering invalid ones and examining conditions for anticipated consequences. Its precise negative-evidence update path still needs tracing and tests.
+- Truth_Revision combines frequency and confidence using confidence-to-evidence-weight conversions and weighted frequency; special handling exists for confidence=1 when configured. Memory.c calls Inference_RevisionAndChoice and records a revised event when revision occurs. The stamp-based independence condition needs verification in that function.
+- The system therefore has code for learning temporal action-outcome regularities and revising quantitative beliefs, but **temporal correlation is not proof of causal identification**. No evidence yet that it invents primitive operations or generalizes causal rules to unseen ontological domains.
+
+Next controlled experiment: construct paired environments with true action causation versus spurious temporal correlation, independent held-out episodes, negative outcomes and distribution shift. Measure chosen actions, predictive calibration, false causal rules, memory pressure and forgetting. Compare to a simple frequency-table learner and to ОТТТ's existing approach under the same data budget.
