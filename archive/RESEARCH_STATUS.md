@@ -36,8 +36,8 @@
 
 ## Где искать определения и историю
 
-- [Ориентирование и фокус](OTTT_ORIENTATION_AND_FOCUS.md).
-- [Память и экспериментальная программа](COGNITIVE_MEMORY_AND_EXPERIMENTS_2026-11-09.md).
-- [Нейросетевая архитектура: варианты A/B/C](OTTT_ORIENTED_NEURAL_ARCHITECTURE_2026-11-09.md).
+- [Ориентирование и фокус](../docs/OTTT_ORIENTATION_AND_FOCUS.md).
+- [Память и экспериментальная программа](../docs/COGNITIVE_MEMORY_AND_EXPERIMENTS_2026-11-09.md).
+- [Нейросетевая архитектура: варианты A/B/C](../docs/OTTT_ORIENTED_NEURAL_ARCHITECTURE_2026-11-09.md).
 - [Журнал подтверждённых работ](DEVELOPMENT_LOG.md).
-- [Архив и решение аудита](../archive/README.md).
+- [Архив и решение аудита](README.md).
