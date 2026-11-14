@@ -50,6 +50,8 @@
 | Дофаномика: этажи торгуются в общей валюте | Общая нейронная валюта ценности | Montague P. R., Berns G. S. Neural economics and the biological substrates of valuation // Neuron. 2002. Vol. 36; Levy D. J., Glimcher P. W. The root of all value: a neural common currency for choice // Current Opinion in Neurobiology. 2012. Vol. 22 |
 | Торг внутренних интересов | Пикоэкономика | Ainslie G. Picoeconomics. Cambridge University Press, 1992 |
 | Дофамин от предвкушения | «Хочу» отдельно от «нравится» | Berridge K. C., Robinson T. E. What is the role of dopamine in reward // Brain Research Reviews. 1998. Vol. 28 |
+| Зависимость как инверсия: этаж использует целое как ресурс | Зависимость как нарушение выбора; завышенное «хочу» | Heyman G. M. Addiction: A Disorder of Choice. Harvard University Press, 2009; Robinson T. E., Berridge K. C. The neural basis of drug craving: an incentive-sensitization theory of addiction // Brain Research Reviews. 1993. Vol. 18 |
+| Управление собой как управление коллективом | Самообязательство, борьба за власть над собой | Elster J. Ulysses and the Sirens. Cambridge University Press, 1979; Schelling T. C. The intimate contest for self-command // The Public Interest. 1980. No. 60 |
 
 **Расхождения.**
 
