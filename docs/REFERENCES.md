@@ -50,6 +50,10 @@
 | Дофаномика: этажи торгуются в общей валюте | Общая нейронная валюта ценности | Montague P. R., Berns G. S. Neural economics and the biological substrates of valuation // Neuron. 2002. Vol. 36; Levy D. J., Glimcher P. W. The root of all value: a neural common currency for choice // Current Opinion in Neurobiology. 2012. Vol. 22 |
 | Торг внутренних интересов | Пикоэкономика | Ainslie G. Picoeconomics. Cambridge University Press, 1992 |
 | Дофамин от предвкушения | «Хочу» отдельно от «нравится» | Berridge K. C., Robinson T. E. What is the role of dopamine in reward // Brain Research Reviews. 1998. Vol. 28 |
+| Карты на столе: побеждает старшая | Конкуренция накопителей; слои поведения, подавляющие друг друга | Usher M., McClelland J. L. The time course of perceptual choice: the leaky, competing accumulator model // Psychological Review. 2001. Vol. 108; Brooks R. A. A robust layered control system for a mobile robot // IEEE Journal of Robotics and Automation. 1986. Vol. 2 |
+| Голодный червь — не шестёрка, а туз | Ценность стимула зависит от нужды | Cabanac M. Physiological role of pleasure // Science. 1971. Vol. 173 |
+| Капитан не запрещает, а ищет более дорогую карту | Самоконтроль меняет оценку, а не отменяет её | Hare T. A., Camerer C. F., Rangel A. Self-control in decision-making involves modulation of the vmPFC valuation system // Science. 2009. Vol. 324 |
+| Зависимость: сбой выдаёт карту дороже, чем положено | Зависимость как сбой вычисления ценности | Redish A. D. Addiction as a computational process gone awry // Science. 2004. Vol. 306 |
 | Зависимость как инверсия: этаж использует целое как ресурс | Зависимость как нарушение выбора; завышенное «хочу» | Heyman G. M. Addiction: A Disorder of Choice. Harvard University Press, 2009; Robinson T. E., Berridge K. C. The neural basis of drug craving: an incentive-sensitization theory of addiction // Brain Research Reviews. 1993. Vol. 18 |
 | Управление собой как управление коллективом | Самообязательство, борьба за власть над собой | Elster J. Ulysses and the Sirens. Cambridge University Press, 1979; Schelling T. C. The intimate contest for self-command // The Public Interest. 1980. No. 60 |
 
@@ -57,6 +61,7 @@
 
 - Мозг не наращивался слоями; как эволюционная анатомия триединый мозг отвергнут. Названия этажей поэтому мнемоника. Cesario J., Johnson D. J., Eisthen H. L. Your brain is not an onion with a tiny reptile inside // Current Directions in Psychological Science. 2020. Vol. 29.
 - Дофамин кодирует не ценность, а ошибку предсказания награды и готовность к усилию. Schultz W., Dayan P., Montague P. R. A neural substrate of prediction and reward // Science. 1997. Vol. 275; Salamone J. D., Correa M. The mysterious motivational functions of mesolimbic dopamine // Neuron. 2012. Vol. 76.
+- Самонаблюдение ненадёжно как свидетельство о причинах собственного поведения. Nisbett R. E., Wilson T. D. Telling more than we can know: verbal reports on mental processes // Psychological Review. 1977. Vol. 84.
 - Сонливость создаётся не предвкушением, а накопленным давлением сна. Borbély A. A. A two process model of sleep regulation // Human Neurobiology. 1982. Vol. 1.
 
 ## Организации и общество
