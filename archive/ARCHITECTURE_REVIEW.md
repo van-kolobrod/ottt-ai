@@ -80,7 +80,7 @@ Next controlled experiment: construct paired environments with true action causa
 
 ## Queue update and Hyperon source inspection — 2026-11-04
 
-**Execution status:** OpenNARS causal benchmark protocol in `docs/OPENNARS_CAUSAL_BENCHMARK.md` is QUEUED / NOT RUN. Codex quota unavailable; do not begin implementation or imply measurements exist. Resume when resources permit. Continue static prior-art analysis meanwhile.
+**Execution status:** OpenNARS causal benchmark protocol in `archive/OPENNARS_CAUSAL_BENCHMARK.md` is QUEUED / NOT RUN. Codex quota unavailable; do not begin implementation or imply measurements exist. Resume when resources permit. Continue static prior-art analysis meanwhile.
 
 ### Hyperon evidence (source-level)
 
